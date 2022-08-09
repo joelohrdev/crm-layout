@@ -18,6 +18,7 @@
     </head>
     <body class="font-sans antialiased h-full">
         <div class="min-h-full">
+            <x-desktop-sidebar.mobile-nav/>
             <x-desktop-sidebar.desktop-sidebar/>
             <div class="lg:pl-64 flex flex-col flex-1">
                 <div class="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:border-none">

@@ -6,14 +6,13 @@
         </div>
         <nav class="mt-5 flex-1 flex flex-col divide-y divide-slate-800 overflow-y-auto" aria-label="Sidebar">
             <div class="px-2 space-y-1">
-                <!-- Current: "bg-tkd-blue-800 text-white", Default: "text-tkd-blue-100 hover:text-white hover:bg-tkd-blue-600" -->
                 <x-desktop-sidebar.main-nav/>
             </div>
-            <div class="mt-6 pt-6">
-                <div class="px-2 space-y-1">
-                    <x-desktop-sidebar.secondary-nav/>
-                </div>
-            </div>
+{{--            <div class="mt-6 pt-6">--}}
+{{--                <div class="px-2 space-y-1">--}}
+{{--                    <x-desktop-sidebar.secondary-nav/>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </nav>
     </div>
 </div>
