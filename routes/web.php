@@ -34,4 +34,16 @@ Route::middleware([
     Route::Get('/clients/create', function () {
         return view('client.create');
     })->name('client.create');
+
+    Route::Get('/clients/{client:slug}', function () {
+        return view('client.show');
+    })->name('client.show');
+
+    Route::Get('/contacts', function () {
+        return view('contact.index');
+    })->name('contact.index');
+
+    Route::Get('/contacts/create', function () {
+        return view('contact.create');
+    })->name('contact.create');
 });
