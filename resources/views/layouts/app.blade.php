@@ -14,6 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Styles -->
+    <style>[x-cloak] { display: none !important; }</style>
     @livewireStyles
 </head>
 <body class="font-sans antialiased h-full">
