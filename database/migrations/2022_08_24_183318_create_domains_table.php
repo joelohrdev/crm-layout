@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('domain');
             $table->foreignId('server_id')->constrained();
-            $table->foreignId('client_id')->constrained();
+            $table->foreignId('client_id')->nullable();
             $table->string('registrar')->nullable();
             $table->boolean('managed')->default(false);
             $table->date('expires')->nullable();

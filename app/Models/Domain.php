@@ -13,6 +13,10 @@ class Domain extends Model
         'name', 'domain', 'server_id', 'client_id', 'registrar', 'managed', 'expires', 'notes'
     ];
 
+    public $casts = [
+        'expires' => 'date'
+    ];
+
     public function server()
     {
         return $this->belongsTo(Server::class);
