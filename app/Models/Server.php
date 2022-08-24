@@ -17,4 +17,9 @@ class Server extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function domains()
+    {
+        return $this->hasMany(Domain::class);
+    }
 }

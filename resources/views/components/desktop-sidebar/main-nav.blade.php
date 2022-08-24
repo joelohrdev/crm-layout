@@ -22,7 +22,7 @@
     Contacts
 </a>
 
-<a href="#" class="text-slate-100 hover:text-white hover:bg-slate-600 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md">
+<a href="{{ route('server.index') }}" class="{{ (request()->is('servers/*')) || (request()->is('servers')) ? 'bg-slate-800' : '' }} text-slate-100 hover:text-white hover:bg-slate-600 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md">
     <!-- Heroicon name: outline/scale -->
     <svg xmlns="http://www.w3.org/2000/svg" class="mr-4 flex-shrink-0 h-6 w-6 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
@@ -30,7 +30,7 @@
     Servers
 </a>
 
-<a href="#" class="text-slate-100 hover:text-white hover:bg-slate-600 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md">
+<a href="{{ route('domain.index') }}" class="{{ (request()->is('domains/*')) || (request()->is('domains')) ? 'bg-slate-800' : '' }} text-slate-100 hover:text-white hover:bg-slate-600 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md">
     <!-- Heroicon name: outline/credit-card -->
     <svg xmlns="http://www.w3.org/2000/svg" class="mr-4 flex-shrink-0 h-6 w-6 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />

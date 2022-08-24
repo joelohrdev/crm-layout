@@ -47,4 +47,20 @@ Route::middleware([
     Route::Get('/contacts/create', function () {
         return view('contact.create');
     })->name('contact.create');
+
+    Route::Get('/servers', function () {
+        return view('server.index');
+    })->name('server.index');
+
+    Route::Get('/servers/create', function () {
+        return view('server.create');
+    })->name('server.create');
+
+    Route::Get('/domains', function () {
+        return view('domain.index');
+    })->name('domain.index');
+
+    Route::Get('/domains/create', function () {
+        return view('domain.create');
+    })->name('domain.create');
 });

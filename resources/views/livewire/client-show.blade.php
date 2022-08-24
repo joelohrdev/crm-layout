@@ -11,7 +11,9 @@
     </div>
     <div class="grid grid-cols-1 gap-6 sm:px-6 lg:grid-flow-col-dense lg:grid-cols-3">
        <div class="lg:col-span-1">
-           show domains and servers here
+           @foreach($client->servers as $server)
+               {{ $server->name }}
+           @endforeach
        </div>
         <div class="lg:col-span-2">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
