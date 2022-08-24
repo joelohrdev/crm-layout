@@ -25,4 +25,14 @@ class Client extends Model
     {
         return $this->belongsToMany(Contact::class);
     }
+
+    public function servers()
+    {
+        return $this->hasMany(Server::class);
+    }
+
+    public function domains()
+    {
+        return $this->hasMany(Domain::class);
+    }
 }

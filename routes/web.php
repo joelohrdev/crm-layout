@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,9 +36,9 @@ Route::middleware([
         return view('client.create');
     })->name('client.create');
 
-    Route::Get('/clients/{client:slug}', function () {
-        return view('client.show');
-    })->name('client.show');
+    Route::get('/clients/{client:slug}', [
+        ClientController::class, 'show',
+    ])->name('client.show');
 
     Route::Get('/contacts', function () {
         return view('contact.index');

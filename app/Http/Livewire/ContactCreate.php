@@ -35,9 +35,17 @@ class ContactCreate extends Component implements Forms\Contracts\HasForms
             ->schema([
                 TextInput::make('first_name'),
                 TextInput::make('last_name'),
-                MultiSelect::make('clients')
-                    ->relationship('clients', 'name')
-            ])
+            ]),
+            MultiSelect::make('clients')
+                ->relationship('clients', 'name'),
+            TextInput::make('position'),
+            Grid::make(3)
+                ->schema([
+                    TextInput::make('phone_number')
+                        ->mask(fn (TextInput\Mask $mask) => $mask->pattern('000-000-0000')),
+                    TextInput::make('extension'),
+                    TextInput::make('email_address')
+                ])
         ];
     }
 
@@ -46,10 +54,17 @@ class ContactCreate extends Component implements Forms\Contracts\HasForms
         return $this->contact;
     }
 
-    public function save(): void
+    public function create(): void
     {
-        $this->contact->update(
-            $this->form->getState(),
-        );
+        $contact = Contact::create($this->form->getState());
+
+        $this->form->model($contact)->saveRelationships();
+
+        $this->redirect('/contacts');
+
+        Notification::make()
+            ->title('Contact Successfully Saved!')
+            ->success()
+            ->send();
     }
 }
