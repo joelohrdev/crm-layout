@@ -9,21 +9,20 @@
             {{ $client->email_address }}
         </div>
     </div>
-    <div class="grid grid-cols-1 gap-6 sm:px-6 lg:grid-flow-col-dense lg:grid-cols-3">
-       <div class="lg:col-span-1">
+    <div class="grid grid-cols-1 gap-16 lg:grid-flow-col-dense lg:grid-cols-3">
+       <div class="lg:col-span-1 bg-gray-50 p-5">
            <div class="space-y-10">
                <div>
                    <h2 class="text-xl font-semibold text-tkd-blue-800">Servers</h2>
-                   @foreach($client->servers as $server)
-                       <div>
-                           <a class="flex space-x-5" target="_blank" href="http://{{ $server->ip_address }}:2086">
-                               {{ $server->name }}
-                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400">
-                                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                               </svg>
-                           </a>
-                       </div>
-                   @endforeach
+                   <ul class="divide-y divide-gray-200">
+                       @foreach($client->servers as $server)
+                           <li class="py-4">
+                               <a target="_blank" href="http://{{ $server->ip_address }}:2086">
+                                   {{ $server->name }}
+                               </a>
+                           </li>
+                       @endforeach
+                   </ul>
                </div>
                <div>
                    <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
@@ -33,10 +32,11 @@
                </div>
            </div>
        </div>
-        <div class="lg:col-span-2">
+        <div class="lg:col-span-2 bg-gray-50 p-5">
+            <h2 class="text-xl font-semibold text-tkd-blue-800 mb-5">Contacts</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 @foreach($client->contacts as $contact)
-                    <div>
+                    <div class="bg-gray-100 p-5">
                         {{ $contact->first_name }} {{ $contact->last_name }}<br />
                         {{ $contact->position }}<br />
                         {{ $contact->phone_number }} ext:{{ $contact->extension }}<br />
