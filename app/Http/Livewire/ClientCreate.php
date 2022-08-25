@@ -8,6 +8,7 @@ use Filament\Forms;
 use Filament\Notifications\Notification;
 use Livewire\Component;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Select;
 use Str;
@@ -29,7 +30,7 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
                 ->afterStateUpdated(function (Closure $set, $state) {
                     $set('slug', Str::slug($state));
                 }),
-            TextInput::make('slug'),
+            Hidden::make('slug'),
             Select::make('status')
                 ->options([
                     'active' => 'Active',
