@@ -29,13 +29,13 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
                 ->reactive()
                 ->afterStateUpdated(function (Closure $set, $state) {
                     $set('slug', Str::slug($state));
-                }),
+                })->required(),
             Hidden::make('slug'),
             Select::make('status')
                 ->options([
                     'active' => 'Active',
                     'closed' => 'Closed'
-                ]),
+                ])->required(),
             TextInput::make('address'),
             Grid::make(3)
                 ->schema([

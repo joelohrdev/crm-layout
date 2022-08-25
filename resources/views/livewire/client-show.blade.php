@@ -2,7 +2,7 @@
     <div class="flex justify-between border-b border-gray-200 pb-10 text-sm">
         <div>
             {{ $client->address }}<br />
-            {{ $client->city }}, {{ $client->state }} {{ $client->postal_code }}
+            {{ $client->city }}@if($client->city && $client->state),@endif {{ $client->state }} {{ $client->postal_code }}
         </div>
         <div class="text-right">
             {{ $client->phone_number }}<br />
