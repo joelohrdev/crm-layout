@@ -5,7 +5,8 @@
             {{ $client->city }}@if($client->city && $client->state),@endif {{ $client->state }} {{ $client->postal_code }}
         </div>
         <div class="text-right">
-            {{ $client->phone_number }}<br />
+            {{ preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $client->phone_number)  }}
+            <br />
             {{ $client->email_address }}
         </div>
     </div>
