@@ -40,6 +40,10 @@ Route::middleware([
         ClientController::class, 'show',
     ])->name('client.show');
 
+    Route::get('/clients/edit/{client:slug}', [
+        ClientController::class, 'edit',
+    ])->name('client.edit');
+
     Route::Get('/contacts', function () {
         return view('contact.index');
     })->name('contact.index');
