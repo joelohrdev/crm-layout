@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use Filament\Forms\Components\TextInput;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use App\Models\Contact;

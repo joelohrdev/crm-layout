@@ -13,24 +13,28 @@
     <div class="grid grid-cols-1 gap-16 lg:grid-flow-col-dense lg:grid-cols-3">
        <div class="lg:col-span-1 bg-gray-50 p-5">
            <div class="space-y-10">
-               <div>
-                   <h2 class="text-xl font-semibold text-tkd-blue-800">Servers</h2>
-                   <ul class="divide-y divide-gray-200">
-                       @foreach($client->servers as $server)
-                           <li class="py-4">
-                               <a target="_blank" href="http://{{ $server->ip_address }}:2086">
-                                   {{ $server->name }}
-                               </a>
-                           </li>
+               @if($client->servers->count() > 0)
+                   <div>
+                       <h2 class="text-xl font-semibold text-tkd-blue-800">Servers</h2>
+                       <ul class="divide-y divide-gray-200">
+                           @foreach($client->servers as $server)
+                               <li class="py-4">
+                                   <a target="_blank" href="http://{{ $server->ip_address }}:2086">
+                                       {{ $server->name }}
+                                   </a>
+                               </li>
+                           @endforeach
+                       </ul>
+                   </div>
+               @endif
+               @if($client->domains->count() > 0)
+                   <div>
+                       <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
+                       @foreach($client->domains as $domain)
+                           <a target="_blank" href="{{ $domain->domain }}">{{ $domain->domain }}</a>
                        @endforeach
-                   </ul>
-               </div>
-               <div>
-                   <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
-                   @foreach($client->domains as $domain)
-                       <a target="_blank" href="{{ $domain->domain }}">{{ $domain->domain }}</a>
-                   @endforeach
-               </div>
+                   </div>
+               @endif
            </div>
        </div>
         <div class="lg:col-span-2 bg-gray-50 p-5">

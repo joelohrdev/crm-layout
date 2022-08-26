@@ -19,7 +19,7 @@ class ClientsIndex extends Component implements Tables\Contracts\HasTable
 
     protected function getTableQuery(): Builder|Relation
     {
-        return Client::query()->orderBy('status', 'ASC')->orderBy('name', 'ASC');
+        return Client::query()->orderBy('name', 'ASC');
     }
 
     protected function getTableColumns(): array
