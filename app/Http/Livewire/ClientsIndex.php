@@ -2,8 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use Closure;
-use Illuminate\Database\Eloquent\Model;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\BadgeColumn;

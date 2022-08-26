@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use App\Models\Contact;
 use Illuminate\Database\Eloquent\Builder;
@@ -30,10 +31,12 @@ class ContactsIndex extends Component implements Tables\Contracts\HasTable
         ];
     }
 
-    public function render()
+    protected function getTableActions(): array
     {
-        return view('livewire.contacts-index', [
-            'contacts' => Contact::orderBy('last_name', 'ASC')->with('clients')->get()
-        ]);
+        return [
+            Action::make('edit')
+                ->url(fn (Contact $record): string => route('contact.edit', $record))
+        ];
     }
+
 }

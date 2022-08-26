@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +53,10 @@ Route::middleware([
     Route::Get('/contacts/create', function () {
         return view('contact.create');
     })->name('contact.create');
+
+    Route::get('/contacts/edit/{contact:id}', [
+       ContactController::class, 'edit',
+    ])->name('contact.edit');
 
     Route::Get('/servers', function () {
         return view('server.index');
