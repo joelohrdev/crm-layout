@@ -40,7 +40,7 @@
                     <div class="bg-gray-100 p-5">
                         {{ $contact->first_name }} {{ $contact->last_name }}<br />
                         {{ $contact->position }}<br />
-                        {{ $contact->phone_number }} ext:{{ $contact->extension }}<br />
+                        {{ preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3',$contact->phone_number) }} @if($contact->extension)ext:{{ $contact->extension }}@endif<br />
                         {{ $contact->email_address }}
                     </div>
                 @endforeach
