@@ -31,7 +31,7 @@
                    <div>
                        <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
                        @foreach($client->domains as $domain)
-                           <a target="_blank" href="{{ $domain->domain }}">{{ $domain->domain }}</a>
+                           <a target="_blank" href="{{ $domain->domain }}">{{ $domain->name }}</a>
                        @endforeach
                    </div>
                @endif
@@ -43,9 +43,9 @@
                 @foreach($client->contacts as $contact)
                     <div class="bg-gray-100 p-5">
                         {{ $contact->first_name }} {{ $contact->last_name }}<br />
-                        {{ $contact->position }}<br />
+                        <span class="text-sm text-gray-400">{{ $contact->position }}</span><br /><br />
                         {{ preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3',$contact->phone_number) }} @if($contact->extension)ext:{{ $contact->extension }}@endif<br />
-                        {{ $contact->email_address }}
+                        <a class="hover:underline transition" href="mailto:{{ $contact->email_address }}">{{ $contact->email_address }}</a>
                     </div>
                 @endforeach
             </div>
