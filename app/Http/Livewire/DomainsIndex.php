@@ -3,29 +3,19 @@
 namespace App\Http\Livewire;
 
 use App\Models\Domain;
-use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Livewire\Component;
+use Livewire\WithPagination;
 
-class DomainsIndex extends Component implements Tables\Contracts\HasTable
+class DomainsIndex extends Component
 {
-    use Tables\Concerns\InteractsWithTable;
+    use WithPagination;
 
-    protected function getTableQuery(): Builder|Relation
+    public function render()
     {
-        return Domain::query()->orderBy('name', 'ASC');
-    }
-
-    protected function getTableColumns(): array
-    {
-        return [
-            TextColumn::make('name'),
-            TextColumn::make('domain'),
-            TextColumn::make('expires')->date(),
-            TextColumn::make('server.name'),
-            TextColumn::make('client.name'),
-        ];
+        return view('livewire.domains-index', [
+            'domains' => Domain::with('server')
+                ->orderBy('name', 'ASC')
+                ->paginate(10)
+        ]);
     }
 }
