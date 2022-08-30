@@ -16,7 +16,9 @@
             @foreach($clients as $client)
                 <tr>
                     <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $client->name }}</td>
-                    <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $client->phone_number }}</td>
+                    <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
+                        {{ preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3',$client->phone_number) }}
+                    </td>
                     <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 hover:text-gray-700 hover:underline lg:table-cell"><a href="mailto:{{ $client->email_address }}">{{ $client->email_address }}</a></td>
                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         @if($client->status === 'active')
