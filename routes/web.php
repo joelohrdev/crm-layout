@@ -66,6 +66,10 @@ Route::middleware([
         return view('server.create');
     })->name('server.create');
 
+    Route::get('/servers/show', function () {
+        return view('server.show');
+    })->name('server.show');
+
     Route::Get('/domains', function () {
         return view('domain.index');
     })->name('domain.index');
