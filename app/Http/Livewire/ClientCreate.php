@@ -32,6 +32,7 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
                 })->required(),
             Hidden::make('slug'),
             Select::make('status')
+                ->required()
                 ->options([
                     'active' => 'Active',
                     'closed' => 'Closed'

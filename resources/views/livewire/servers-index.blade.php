@@ -15,7 +15,7 @@
             <tbody class="divide-y divide-gray-200 bg-white">
             @foreach($servers as $server)
                 <tr>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-tkd-blue-900 sm:pl-6">
                         <a class="hover:underline" target="_blank" href="http://{{ $server->ip_address }}:2086">{{ $server->name }}</a>
                     </td>
                     <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">

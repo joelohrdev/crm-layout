@@ -27,16 +27,17 @@ class ServerCreate extends Component implements Forms\Contracts\HasForms
     {
         return [
             TextInput::make('name')
+                ->required()
                 ->reactive()
                 ->afterStateUpdated(function (Closure $set, $state) {
                     $set('slug', Str::slug($state));
                 }),
             Hidden::make('slug'),
-            TextInput::make('ip_address'),
+            TextInput::make('ip_address')->required(),
             Select::make('client_id')
+                ->required()
                 ->label('Client')
                 ->options(Client::all()->pluck('name', 'id')),
-            RichEditor::make('notes')
         ];
     }
 

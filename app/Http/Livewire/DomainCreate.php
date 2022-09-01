@@ -26,12 +26,14 @@ class DomainCreate extends Component implements Forms\Contracts\HasForms
     protected function getFormSchema(): array
     {
         return [
-            TextInput::make('name'),
+            TextInput::make('name')->required(),
             TextInput::make('domain')
+                ->required()
                 ->url(),
             Forms\Components\Grid::make()
                 ->schema([
                     Select::make('server_id')
+                        ->required()
                         ->label('Server')
                         ->options(Server::all()->pluck('name', 'id')),
                     Select::make('client_id')

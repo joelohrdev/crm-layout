@@ -33,8 +33,8 @@ class ContactCreate extends Component implements Forms\Contracts\HasForms
         return [
           Grid::make()
             ->schema([
-                TextInput::make('first_name'),
-                TextInput::make('last_name'),
+                TextInput::make('first_name')->required(),
+                TextInput::make('last_name')->required(),
             ]),
             MultiSelect::make('clients')
                 ->relationship('clients', 'name'),

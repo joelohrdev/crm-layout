@@ -6,7 +6,7 @@ use App\Models\Contact;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\MultiSelect;
 use Filament\Notifications\Notification;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms;
@@ -46,7 +46,7 @@ class ContactEdit extends Component implements Forms\Contracts\HasForms
                     TextInput::make('first_name'),
                     TextInput::make('last_name'),
                 ]),
-            MultiSelect::make('clients')
+            MultiSelect::make('client')
                 ->relationship('clients', 'name'),
             TextInput::make('position'),
             Grid::make(3)
