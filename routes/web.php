@@ -70,6 +70,18 @@ Route::middleware([
         return view('server.show');
     })->name('server.show');
 
+    Route::get('/servers/server-ten', function () {
+        return view('server.server_ten');
+    })->name('server.show.server_ten');
+
+    Route::get('/servers/server-nine', function () {
+        return view('server.server_nine');
+    })->name('server.show.server_nine');
+
+    Route::get('/servers/server-eight', function () {
+        return view('server.server_eight');
+    })->name('server.show.server_eight');
+
     Route::Get('/domains', function () {
         return view('domain.index');
     })->name('domain.index');
@@ -78,3 +90,4 @@ Route::middleware([
         return view('domain.create');
     })->name('domain.create');
 });
+
