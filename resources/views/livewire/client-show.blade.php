@@ -19,8 +19,8 @@
                        <ul class="divide-y divide-gray-200">
                            @foreach($client->servers as $server)
                                <li class="py-4">
-                                   <a target="_blank" href="http://{{ $server->ip_address }}:2086">
-                                       {{ $server->name }}
+                                   <a class="w-full flex justify-between" target="_blank" href="https://{{ $server->ip_address }}:2086">
+                                       {{ $server->name }} {{ $server->ip_address }}
                                    </a>
                                </li>
                            @endforeach
@@ -31,7 +31,7 @@
                    <div>
                        <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
                        @foreach($client->domains as $domain)
-                           <a target="_blank" href="{{ $domain->domain }}">{{ $domain->name }}</a>
+                           <a target="_blank" href="{{ $domain->url }}">{{ $domain->name }}</a>
                        @endforeach
                    </div>
                @endif
