@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
-use App\Models\Contact;
+use App\Http\Controllers\DomainController;
+use App\Http\Controllers\ServerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,6 +71,10 @@ Route::middleware([
         return view('server.show');
     })->name('server.show');
 
+    Route::get('/servers/edit/{server:id}', [
+        ServerController::class, 'edit'
+    ])->name('server.edit');
+
     Route::get('/servers/server-ten', function () {
         return view('server.server_ten');
     })->name('server.show.server_ten');
@@ -89,5 +94,9 @@ Route::middleware([
     Route::Get('/domains/create', function () {
         return view('domain.create');
     })->name('domain.create');
+
+    Route::Get('/domains/edit/{domain:id}', [
+        DomainController::class, 'edit'
+    ])->name('domain.edit');
 });
 

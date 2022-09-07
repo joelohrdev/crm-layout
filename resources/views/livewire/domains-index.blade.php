@@ -28,7 +28,7 @@
                         {{ $domain->server->name }}
                     </td>
                     <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#" class="text-tkd-blue-600 hover:text-tkd-blue-900">View<span class="sr-only">, {{ $domain->name }}</span></a>
+{{--                        <a href="{{ route('domain.edit', $domain) }}" class="text-tkd-blue-600 hover:text-tkd-blue-900">Edit<span class="sr-only">, {{ $domain->name }}</span></a>--}}
                     </td>
                 </tr>
             @endforeach
