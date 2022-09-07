@@ -27,7 +27,7 @@ class DomainCreate extends Component implements Forms\Contracts\HasForms
     {
         return [
             TextInput::make('name')->required(),
-            TextInput::make('domain')
+            TextInput::make('url')
                 ->required()
                 ->url(),
             Forms\Components\Grid::make()

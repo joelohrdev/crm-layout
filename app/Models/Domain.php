@@ -10,7 +10,7 @@ class Domain extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'domain', 'server_id', 'client_id', 'registrar', 'managed', 'expires', 'notes'
+        'name', 'url', 'server_id', 'client_id', 'registrar', 'managed', 'expires', 'notes'
     ];
 
     public $casts = [

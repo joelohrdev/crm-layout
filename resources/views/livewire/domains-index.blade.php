@@ -19,7 +19,7 @@
                         {{ $domain->name }}
                     </td>
                     <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
-                        <a class="hover:underline" target="_blank" href="{{ $domain->domain }}">{{ $domain->domain }}</a>
+                        <a class="hover:underline" target="_blank" href="{{ $domain->url }}">{{ $domain->url }}</a>
                     </td>
                     <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 hover:text-gray-700 hover:underline lg:table-cell">
                         {{ Carbon\Carbon::parse($domain->expires)->format('F d, Y') }}
@@ -28,7 +28,7 @@
                         {{ $domain->server->name }}
                     </td>
                     <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-{{--                        <a href="{{ route('domain.edit', $domain) }}" class="text-tkd-blue-600 hover:text-tkd-blue-900">Edit<span class="sr-only">, {{ $domain->name }}</span></a>--}}
+                        <a href="{{ route('domain.edit', $domain) }}" class="text-tkd-blue-600 hover:text-tkd-blue-900">Edit<span class="sr-only">, {{ $domain->name }}</span></a>
                     </td>
                 </tr>
             @endforeach

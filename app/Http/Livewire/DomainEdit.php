@@ -21,7 +21,7 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
     public Domain $domain;
 
     public $name;
-    public $domainName;
+    public $url;
     public $server_id;
     public $client_id;
     public $registrar;
@@ -33,13 +33,12 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
     {
         $this->form->fill([
             'name' => $this->domain->name,
-            'domain' => $this->domain->domainName,
+            'url' => $this->domain->url,
             'server_id' => $this->domain->server_id,
             'client_id' => $this->domain->client_id,
             'registrar' => $this->domain->registrar,
             'managed' => $this->domain->managed,
             'expires' => $this->domain->expires,
-            'notes' => $this->domain->notes,
         ]);
     }
 
@@ -47,7 +46,7 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
     {
         return [
             TextInput::make('name')->required(),
-            TextInput::make('domain')
+            TextInput::make('url')
                 ->required()
                 ->url(),
             Forms\Components\Grid::make()
@@ -64,7 +63,6 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
             Toggle::make('managed')->inline()
                 ->label('Managed by Us?'),
             DatePicker::make('expires'),
-            RichEditor::make('notes')
         ];
     }
 
