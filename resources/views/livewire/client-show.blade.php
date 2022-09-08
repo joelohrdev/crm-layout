@@ -19,8 +19,8 @@
                        <ul class="divide-y divide-gray-200">
                            @foreach($client->servers as $server)
                                <li class="py-4">
-                                   <a class="w-full flex justify-between" target="_blank" href="https://{{ $server->ip_address }}:2086">
-                                       {{ $server->name }} {{ $server->ip_address }}
+                                   <a class="w-full flex justify-between items-end" target="_blank" href="https://{{ $server->ip_address }}:2086">
+                                       {{ $server->name }} <span class="text-gray-400 text-sm">{{ $server->ip_address }}</span>
                                    </a>
                                </li>
                            @endforeach
