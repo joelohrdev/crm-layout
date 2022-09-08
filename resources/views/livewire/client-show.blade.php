@@ -11,10 +11,10 @@
         </div>
     </div>
     <div class="grid grid-cols-1 gap-16 lg:grid-flow-col-dense lg:grid-cols-3">
-       <div class="lg:col-span-1 bg-gray-50 p-5 shadow-xl">
-           <div class="space-y-10">
+       <div class="lg:col-span-1 p-5">
+           <div class="space-y-5">
                @if($client->servers->count() > 0)
-                   <div>
+                   <div class="bg-white p-5 rounded-lg shadow">
                        <h2 class="text-xl font-semibold text-tkd-blue-800">Servers</h2>
                        <ul class="divide-y divide-gray-200">
                            @foreach($client->servers as $server)
@@ -28,7 +28,7 @@
                    </div>
                @endif
                @if($client->domains->count() > 0)
-                   <div>
+                   <div class="bg-white p-5 rounded-lg shadow">
                        <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
                        @foreach($client->domains as $domain)
                            <a class="text-sm" target="_blank" href="{{ $domain->url }}">{{ $domain->name }}</a>
@@ -37,11 +37,11 @@
                @endif
            </div>
        </div>
-        <div class="lg:col-span-2 bg-gray-50 p-5 shadow-xl">
+        <div class="lg:col-span-2 p-5">
             <h2 class="text-xl font-semibold text-tkd-blue-800 mb-5">Contacts</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 @foreach($client->contacts as $contact)
-                    <div class="bg-gray-100 p-5 text-sm">
+                    <div class="bg-white hover:bg-gray-50 transition shadow rounded-lg p-5 text-sm">
                         {{ $contact->first_name }} {{ $contact->last_name }}<br />
                         <span class="text-sm text-gray-400">{{ $contact->position }}</span><br /><br />
                         {{ preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3',$contact->phone_number) }} @if($contact->extension)ext:{{ $contact->extension }}@endif<br />
