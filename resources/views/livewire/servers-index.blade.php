@@ -28,7 +28,7 @@
                         {{ $server->domains->count() }}
                     </td>
                     <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="{{ route('server.edit', $server) }}" class="text-tkd-blue-600 hover:text-tkd-blue-900">Edit<span class="sr-only">, {{ $server->name }}</span></a>
+                        <a href="{{ route('server.edit', $server) }}" class="text-slate-600 hover:text-slate-900">Edit<span class="sr-only">, {{ $server->name }}</span></a>
                     </td>
                 </tr>
             @endforeach

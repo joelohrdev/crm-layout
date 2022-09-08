@@ -34,7 +34,7 @@
                         @endforeach
                     </td>
                     <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="{{ route('contact.edit', $contact) }}" class="text-tkd-blue-600 hover:text-tkd-blue-900">Edit<span class="sr-only">, {{ $contact->name }}</span></a>
+                        <a href="{{ route('contact.edit', $contact) }}" class="text-slate-600 hover:text-slate-900">Edit<span class="sr-only">, {{ $contact->name }}</span></a>
                     </td>
                 </tr>
             @endforeach
