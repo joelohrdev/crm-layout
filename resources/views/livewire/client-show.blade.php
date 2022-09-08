@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="grid grid-cols-1 gap-16 lg:grid-flow-col-dense lg:grid-cols-3">
-       <div class="lg:col-span-1 p-5">
+       <div class="lg:col-span-1">
            <div class="space-y-5">
                @if($servers->count() > 0)
                    <div class="bg-white p-5 rounded-lg shadow">
@@ -37,7 +37,7 @@
                @endif
            </div>
        </div>
-        <div class="lg:col-span-2 p-5">
+        <div class="lg:col-span-2">
             <h2 class="text-xl font-semibold text-tkd-blue-800 mb-5">Contacts</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 @foreach($client->contacts as $contact)
