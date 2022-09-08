@@ -17,7 +17,7 @@
                    <div class="bg-white p-5 rounded-lg shadow">
                        <h2 class="text-xl font-semibold text-tkd-blue-800">Servers</h2>
                        <ul class="divide-y divide-gray-200">
-                           @foreach($client->servers as $server)
+                           @foreach($servers as $server)
                                <li class="py-4">
                                    <a class="w-full text-sm flex justify-between items-end" target="_blank" href="https://{{ $server->ip_address }}:2086">
                                        {{ $server->name }} <span class="text-gray-400">{{ $server->ip_address }}</span>
@@ -27,7 +27,7 @@
                        </ul>
                    </div>
                @endif
-               @if($client->domains->count() > 0)
+               @if($domains->count() > 0)
                    <div class="bg-white p-5 rounded-lg shadow">
                        <h2 class="text-xl font-semibold text-tkd-blue-800">Domains</h2>
                        @foreach($client->domains as $domain)
