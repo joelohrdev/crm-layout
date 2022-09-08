@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Domain;
 use App\Models\Server;
 use AshAllenDesign\FaviconFetcher\Contracts\Fetcher;
@@ -14,6 +15,7 @@ class ClientShow extends Component
     public $client;
     public $servers;
     public $domains;
+    public $contacts;
 
     public function mount(Client $client)
     {
