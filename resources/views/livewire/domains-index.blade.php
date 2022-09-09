@@ -6,7 +6,6 @@
                 <input wire:model="search" type="search" name="search" id="search" placeholder="Search Domains" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-slate-500 focus:ring-slate-500 sm:text-sm">
             </div>
         </div>
-
     </div>
     <div class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
         <table class="min-w-full divide-y divide-gray-300">
