@@ -26,6 +26,7 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
     public $client_id;
     public $registrar;
     public $managed;
+    public $cloudflare;
     public $expires;
     public $notes;
 
@@ -38,6 +39,7 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
             'client_id' => $this->domain->client_id,
             'registrar' => $this->domain->registrar,
             'managed' => $this->domain->managed,
+            'cloudflare' => $this->domain->cloudflare,
             'expires' => $this->domain->expires,
         ]);
     }
@@ -62,6 +64,8 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
             TextInput::make('registrar'),
             Toggle::make('managed')->inline()
                 ->label('Managed by Us?'),
+            Toggle::make('cloudflare')->inline()
+                ->label('Domain on Cloudflare?'),
             DatePicker::make('expires'),
         ];
     }

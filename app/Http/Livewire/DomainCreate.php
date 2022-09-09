@@ -43,6 +43,8 @@ class DomainCreate extends Component implements Forms\Contracts\HasForms
             TextInput::make('registrar'),
             Toggle::make('managed')->inline()
                 ->label('Managed by Us?'),
+            Toggle::make('cloudflare')->inline()
+                ->label('Domain on Cloudflare?'),
             DatePicker::make('expires'),
             RichEditor::make('notes')
         ];
