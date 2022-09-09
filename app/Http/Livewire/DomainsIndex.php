@@ -12,13 +12,18 @@ class DomainsIndex extends Component
 
     public $search = '';
 
+    public function updatingSearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function render()
     {
         return view('livewire.domains-index', [
             'domains' => Domain::with('server')
                 ->search('name', $this->search)
                 ->orderBy('name', 'ASC')
-                ->paginate(10)
+                ->paginate(1)
         ]);
     }
 }
