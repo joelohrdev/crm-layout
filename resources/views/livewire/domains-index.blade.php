@@ -3,7 +3,7 @@
         <div class="w-1/4">
             <div class="relative mt-1 flex items-center">
                 <label class="hidden" for="search">Search</label>
-                <input wire:model="search" type="text" name="search" id="search" placeholder="Search Domains" class="block w-full rounded-md border-gray-300 pr-12 shadow-sm focus:border-slate-500 focus:ring-slate-500 sm:text-sm">
+                <input wire:model="search" type="search" name="search" id="search" placeholder="Search Domains" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-slate-500 focus:ring-slate-500 sm:text-sm">
             </div>
         </div>
 
