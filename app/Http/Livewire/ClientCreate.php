@@ -11,11 +11,14 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Select;
+use Spatie\SlackAlerts\Facades\SlackAlert;
 use Str;
 
 class ClientCreate extends Component implements Forms\Contracts\HasForms
 {
     use Forms\Concerns\InteractsWithForms;
+
+    public $client;
 
     public function mount(): void
     {
@@ -55,7 +58,7 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
 
     public function create(): void
     {
-        Client::create($this->form->getState());
+        $client = Client::create($this->form->getState());
 
         $this->redirect('/clients');
 
@@ -63,6 +66,8 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
             ->title('Client Successfully Saved!')
             ->success()
             ->send();
+
+        SlackAlert::message('New Client Created :tada::tada::tada:');
     }
 
     public function render()
