@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Domain;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Spatie\SlackAlerts\Facades\SlackAlert;
 
@@ -28,6 +30,13 @@ class DailyDomainCheck extends Command
      */
     public function handle()
     {
-        return SlackAlert::message('This is an automated message from the Domain Check');
+        $expiredDomains = Domain::where('expires', '<=', Carbon::now())->get();
+
+        if($expiredDomains) {
+            foreach($expiredDomains as $ed) {
+                $daysAgo = Carbon::parse($ed->expires)->diffForHumans();
+                SlackAlert::message("{$ed->name} expired {$daysAgo}! ⚠️");
+            }
+        }
     }
 }
