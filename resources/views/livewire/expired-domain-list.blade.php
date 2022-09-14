@@ -21,7 +21,18 @@
                     </a>
                 </li>
             @empty
+                <li>
+                    <div class="block hover:bg-gray-50">
+                        <div class="px-4 py-4 sm:px-6">
+                            <div class="flex items-center justify-between">
+                                <div class="truncate text-sm font-medium text-slate-600">No expired domains</div>
+                                <div class="ml-2 flex flex-shrink-0">
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             @endforelse
 
         </ul>

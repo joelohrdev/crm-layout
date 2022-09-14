@@ -25,7 +25,7 @@
                         {{ $server->client->name }}
                     </td>
                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {{ $server->domains->count() }}
+                        {{ $server->domains_count }}
                     </td>
                     <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                         <a href="{{ route('server.edit', $server) }}" class="text-slate-600 hover:text-slate-900">Edit<span class="sr-only">, {{ $server->name }}</span></a>

@@ -14,7 +14,7 @@ class ServersIndex extends Component
     {
         return view('livewire.servers-index', [
             'servers' => Server::with('client')
-                ->with('domains')
+                ->withCount('domains')
                 ->orderBy('name', 'ASC')
                 ->paginate(10)
         ]);
