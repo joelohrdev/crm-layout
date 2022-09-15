@@ -11,7 +11,7 @@ class ServerEight extends Component
 
     public function mount()
     {
-        $this->API_KEY_08 = env('SERVER_08_API_KEY');
+        $this->API_KEY_08 = env('SERVER_08_KEY');
     }
 
     public function render()

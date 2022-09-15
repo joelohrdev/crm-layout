@@ -87,6 +87,30 @@ Route::middleware([
         return view('server.server_eight');
     })->name('server.show.server_eight');
 
+    Route::get('/servers/server-six', function () {
+        return view('server.server_six');
+    })->name('server.show.server_six');
+
+    Route::get('/servers/server-five', function () {
+        return view('server.server_five');
+    })->name('server.show.server_five');
+
+    Route::get('/servers/server-four', function () {
+        return view('server.server_four');
+    })->name('server.show.server_four');
+
+    Route::get('/servers/server-three', function () {
+        return view('server.server_three');
+    })->name('server.show.server_three');
+
+    Route::get('/servers/server-two', function () {
+        return view('server.server_two');
+    })->name('server.show.server_two');
+
+    Route::get('/servers/server-one', function () {
+        return view('server.server_one');
+    })->name('server.show.server_one');
+
     Route::Get('/domains', function () {
         return view('domain.index');
     })->name('domain.index');

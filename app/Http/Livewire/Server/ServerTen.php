@@ -11,7 +11,7 @@ class ServerTen extends Component
 
     public function mount()
     {
-        $this->API_KEY_10 = env('SERVER_10_API_KEY');
+        $this->API_KEY_10 = env('SERVER_10_KEY');
     }
 
     public function render()

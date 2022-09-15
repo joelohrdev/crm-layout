@@ -8,11 +8,11 @@
             <div class="px-2 space-y-1">
                 <x-desktop-sidebar.main-nav/>
             </div>
-{{--            <div class="mt-6 pt-6">--}}
-{{--                <div class="px-2 space-y-1">--}}
-{{--                    <x-desktop-sidebar.secondary-nav/>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="mt-6 pt-6">
+                <div class="px-2 space-y-1">
+                    <x-desktop-sidebar.secondary-nav/>
+                </div>
+            </div>
         </nav>
     </div>
 </div>

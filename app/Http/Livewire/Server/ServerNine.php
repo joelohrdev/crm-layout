@@ -11,7 +11,7 @@ class ServerNine extends Component
 
     public function mount()
     {
-        $this->API_KEY_09 = env('SERVER_09_API_KEY');
+        $this->API_KEY_09 = env('SERVER_09_KEY');
     }
 
     public function render()
