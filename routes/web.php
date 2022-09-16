@@ -123,6 +123,6 @@ Route::middleware([
         DomainController::class, 'edit'
     ])->name('domain.edit');
 
-    Route::Get('/import-test', [DomainController::class, 'import']);
+//    Route::Get('/import-test', [DomainController::class, 'import']);
 });
 
