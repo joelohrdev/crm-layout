@@ -23,6 +23,10 @@ class WhmTest extends Component
     public function render()
     {
 
+//        Clear the tables
+//        Send a GET request to API
+//        Import domains into database
+
         $responses = Http::pool(fn (Pool $pool) => [
             $pool->as('server10')->withHeaders([
                 'Authorization' => 'whm root:' . $this->API_KEY_10

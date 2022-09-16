@@ -122,5 +122,7 @@ Route::middleware([
     Route::Get('/domains/edit/{domain:id}', [
         DomainController::class, 'edit'
     ])->name('domain.edit');
+
+    Route::Get('/import-test', [DomainController::class, 'import']);
 });
 

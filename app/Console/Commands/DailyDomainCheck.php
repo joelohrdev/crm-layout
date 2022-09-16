@@ -30,7 +30,9 @@ class DailyDomainCheck extends Command
      */
     public function handle()
     {
-        $expiredDomains = Domain::where('expires', '<=', Carbon::yesterday())->get();
+        $expiredDomains = Domain::whereNotNull('expires')
+            ->where('expires', '<=', Carbon::yesterday())
+            ->get();
 
         if($expiredDomains) {
             foreach($expiredDomains as $ed) {

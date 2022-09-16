@@ -46,7 +46,11 @@
                         @endif
                     </td>
                     <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:table-cell @if($domain->expires <= \Carbon\Carbon::now()) text-red-500 @endif">
-                        {{ Carbon\Carbon::parse($domain->expires)->format('F d, Y') }}
+                        @if($domain->expires == null)
+                            -
+                        @else
+                            {{ Carbon\Carbon::parse($domain->expires)->format('F d, Y') }}
+                        @endif
                     </td>
                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 hover:text-gray-700 hover:underline">
                         <a target="_blank" href="https://{{ $domain->server->ip_address }}:2086">{{ $domain->server->name }}</a>
