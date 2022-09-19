@@ -5,12 +5,12 @@ namespace App\Http\Livewire;
 use App\Models\Client;
 use Closure;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Livewire\Component;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Select;
 use Spatie\SlackAlerts\Facades\SlackAlert;
 use Str;
 
@@ -38,7 +38,7 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
                 ->required()
                 ->options([
                     'active' => 'Active',
-                    'closed' => 'Closed'
+                    'closed' => 'Closed',
                 ])->required(),
             TextInput::make('address'),
             Grid::make(3)
@@ -52,6 +52,13 @@ class ClientCreate extends Component implements Forms\Contracts\HasForms
                     TextInput::make('phone_number')
                         ->mask(fn (TextInput\Mask $mask) => $mask->pattern('000-000-0000')),
                     TextInput::make('email_address'),
+                ]),
+            Grid::make()
+                ->schema([
+                    TextInput::make('consumer_key')
+                        ->label('Consumer Key'),
+                    TextInput::make('consumer_secret')
+                        ->label('Consumer Secret'),
                 ])
         ];
     }

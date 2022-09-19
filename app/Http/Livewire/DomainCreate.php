@@ -6,12 +6,12 @@ use App\Models\Client;
 use App\Models\Domain;
 use App\Models\Server;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\DatePicker;
-use Filament\Notifications\Notification;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Notifications\Notification;
 use Livewire\Component;
 
 class DomainCreate extends Component implements Forms\Contracts\HasForms
@@ -46,7 +46,7 @@ class DomainCreate extends Component implements Forms\Contracts\HasForms
             Toggle::make('cloudflare')->inline()
                 ->label('Domain on Cloudflare?'),
             DatePicker::make('expires'),
-            RichEditor::make('notes')
+            RichEditor::make('notes'),
         ];
     }
 
@@ -61,5 +61,4 @@ class DomainCreate extends Component implements Forms\Contracts\HasForms
             ->success()
             ->send();
     }
-
 }

@@ -10,7 +10,7 @@ class Server extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'slug', 'client_id', 'ip_address'
+        'name', 'slug', 'client_id', 'ip_address',
     ];
 
     public function client()

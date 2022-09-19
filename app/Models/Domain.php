@@ -10,11 +10,11 @@ class Domain extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'url', 'server_id', 'client_id', 'registrar', 'managed', 'expires', 'cloudflare', 'notes'
+        'name', 'url', 'server_id', 'client_id', 'registrar', 'managed', 'expires', 'cloudflare', 'notes',
     ];
 
     public $casts = [
-        'expires' => 'date'
+        'expires' => 'date',
     ];
 
     public function server()

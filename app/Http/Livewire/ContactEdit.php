@@ -3,13 +3,12 @@
 namespace App\Http\Livewire;
 
 use App\Models\Contact;
+use Filament\Forms;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\MultiSelect;
-use Filament\Notifications\Notification;
-use Illuminate\Database\Eloquent\Builder;
-use Livewire\Component;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms;
+use Filament\Notifications\Notification;
+use Livewire\Component;
 
 class ContactEdit extends Component implements Forms\Contracts\HasForms
 {
@@ -18,11 +17,17 @@ class ContactEdit extends Component implements Forms\Contracts\HasForms
     public Contact $contact;
 
     public $first_name;
+
     public $last_name;
+
     public $clients;
+
     public $position;
+
     public $phone_number;
+
     public $extension;
+
     public $email_address;
 
     public function mount(): void
@@ -54,8 +59,8 @@ class ContactEdit extends Component implements Forms\Contracts\HasForms
                     TextInput::make('phone_number')
                         ->mask(fn (TextInput\Mask $mask) => $mask->pattern('000-000-0000')),
                     TextInput::make('extension'),
-                    TextInput::make('email_address')
-                ])
+                    TextInput::make('email_address'),
+                ]),
         ];
     }
 

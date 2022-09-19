@@ -32,7 +32,7 @@ return [
     ],
 
     'serverTen' => [
-        'api' => env('SERVER_10_API_KEY')
+        'api' => env('SERVER_10_API_KEY'),
     ],
 
 ];

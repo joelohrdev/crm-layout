@@ -20,8 +20,11 @@ class ServerEdit extends Component implements Forms\Contracts\HasForms
     public Server $server;
 
     public $name;
+
     public $slug;
+
     public $ip_address;
+
     public $client_id;
 
     public function mount(): void
@@ -57,7 +60,7 @@ class ServerEdit extends Component implements Forms\Contracts\HasForms
         return $this->server;
     }
 
-    public function update():void
+    public function update(): void
     {
         $this->server->update(
             $this->form->getState()

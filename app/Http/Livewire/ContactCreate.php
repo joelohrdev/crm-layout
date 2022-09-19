@@ -2,19 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Client;
 use App\Models\Contact;
-use Closure;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\MultiSelect;
+use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\MultiSelect;
-use PhpParser\Node\Expr\AssignOp\Mul;
-use Str;
 
 class ContactCreate extends Component implements Forms\Contracts\HasForms
 {
@@ -31,11 +26,11 @@ class ContactCreate extends Component implements Forms\Contracts\HasForms
     public function getFormSchema(): array
     {
         return [
-          Grid::make()
-            ->schema([
-                TextInput::make('first_name')->required(),
-                TextInput::make('last_name')->required(),
-            ]),
+            Grid::make()
+              ->schema([
+                  TextInput::make('first_name')->required(),
+                  TextInput::make('last_name')->required(),
+              ]),
             MultiSelect::make('clients')
                 ->relationship('clients', 'name'),
             TextInput::make('position'),
@@ -44,8 +39,8 @@ class ContactCreate extends Component implements Forms\Contracts\HasForms
                     TextInput::make('phone_number')
                         ->mask(fn (TextInput\Mask $mask) => $mask->pattern('000-000-0000')),
                     TextInput::make('extension'),
-                    TextInput::make('email_address')
-                ])
+                    TextInput::make('email_address'),
+                ]),
         ];
     }
 

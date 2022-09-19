@@ -20,6 +20,7 @@ class ClientEdit extends Component implements Forms\Contracts\HasForms
     public Client $client;
 
     public $name;
+
     public $status;
 
     public function mount(): void
@@ -34,6 +35,9 @@ class ClientEdit extends Component implements Forms\Contracts\HasForms
             'postal_code' => $this->client->postal_code,
             'phone_number' => $this->client->phone_number,
             'email_address' => $this->client->email_address,
+            'consumer_key' => $this->client->consumer_key,
+            'consumer_secret' => $this->client->consumer_secret,
+
         ]);
     }
 
@@ -49,7 +53,7 @@ class ClientEdit extends Component implements Forms\Contracts\HasForms
             Select::make('status')
                 ->options([
                     'active' => 'Active',
-                    'closed' => 'Closed'
+                    'closed' => 'Closed',
                 ])->required(),
             TextInput::make('address'),
             Grid::make(3)
@@ -63,6 +67,13 @@ class ClientEdit extends Component implements Forms\Contracts\HasForms
                     TextInput::make('phone_number')
                         ->mask(fn (TextInput\Mask $mask) => $mask->pattern('000-000-0000')),
                     TextInput::make('email_address'),
+                ]),
+            Grid::make()
+                ->schema([
+                    TextInput::make('consumer_key')
+                        ->label('Consumer Key'),
+                    TextInput::make('consumer_secret')
+                        ->label('Consumer Secret'),
                 ])
         ];
     }
@@ -80,5 +91,4 @@ class ClientEdit extends Component implements Forms\Contracts\HasForms
             ->success()
             ->send();
     }
-
 }

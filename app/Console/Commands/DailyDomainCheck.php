@@ -34,8 +34,8 @@ class DailyDomainCheck extends Command
             ->where('expires', '<=', Carbon::yesterday())
             ->get();
 
-        if($expiredDomains) {
-            foreach($expiredDomains as $ed) {
+        if ($expiredDomains) {
+            foreach ($expiredDomains as $ed) {
                 $daysAgo = Carbon::parse($ed->expires)->diffForHumans();
                 SlackAlert::message("{$ed->name} expired {$daysAgo}! ⚠️");
             }

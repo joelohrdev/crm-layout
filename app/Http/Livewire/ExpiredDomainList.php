@@ -10,8 +10,8 @@ class ExpiredDomainList extends Component
 {
     public function render()
     {
-        return view('livewire.expired-domain-list',[
-            'domains' => Domain::where('expires', '<=', Carbon::now())->get()
+        return view('livewire.expired-domain-list', [
+            'domains' => Domain::where('expires', '<=', Carbon::now())->get(),
         ]);
     }
 }

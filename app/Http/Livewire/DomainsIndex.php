@@ -23,7 +23,7 @@ class DomainsIndex extends Component
             'domains' => Domain::with('server')
                 ->search('name', $this->search)
                 ->orderBy('name', 'ASC')
-                ->paginate(10)
+                ->paginate(10),
         ]);
     }
 }

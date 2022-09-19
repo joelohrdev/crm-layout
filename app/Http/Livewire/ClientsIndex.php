@@ -26,5 +26,4 @@ class ClientsIndex extends Component
                 ->paginate(10),
         ]);
     }
-
 }

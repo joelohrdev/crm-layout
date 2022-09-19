@@ -19,6 +19,8 @@ class Client extends Model
         'postal_code',
         'phone_number',
         'email_address',
+        'consumer_key',
+        'consumer_secret',
     ];
 
     public function contacts()

@@ -6,11 +6,10 @@ use App\Models\Client;
 use App\Models\Server;
 use Closure;
 use Filament\Forms;
-use Filament\Notifications\Notification;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Livewire\Component;
 use Str;
 
@@ -52,5 +51,4 @@ class ServerCreate extends Component implements Forms\Contracts\HasForms
             ->success()
             ->send();
     }
-
 }

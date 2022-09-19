@@ -7,7 +7,6 @@ use App\Models\Domain;
 use App\Models\Server;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -21,13 +20,21 @@ class DomainEdit extends Component implements Forms\Contracts\HasForms
     public Domain $domain;
 
     public $name;
+
     public $url;
+
     public $server_id;
+
     public $client_id;
+
     public $registrar;
+
     public $managed;
+
     public $cloudflare;
+
     public $expires;
+
     public $notes;
 
     public function mount(): void

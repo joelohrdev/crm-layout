@@ -24,9 +24,8 @@ Route::get('/', function () {
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -56,7 +55,7 @@ Route::middleware([
     })->name('contact.create');
 
     Route::get('/contacts/edit/{contact:id}', [
-       ContactController::class, 'edit',
+        ContactController::class, 'edit',
     ])->name('contact.edit');
 
     Route::Get('/servers', function () {
@@ -72,7 +71,7 @@ Route::middleware([
     })->name('server.show');
 
     Route::get('/servers/edit/{server:id}', [
-        ServerController::class, 'edit'
+        ServerController::class, 'edit',
     ])->name('server.edit');
 
     Route::get('/servers/server-ten', function () {
@@ -120,9 +119,8 @@ Route::middleware([
     })->name('domain.create');
 
     Route::Get('/domains/edit/{domain:id}', [
-        DomainController::class, 'edit'
+        DomainController::class, 'edit',
     ])->name('domain.edit');
 
-//    Route::Get('/import-test', [DomainController::class, 'import']);
+    Route::Get('/import-test', [DomainController::class, 'import']);
 });
-

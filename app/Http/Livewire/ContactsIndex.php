@@ -13,9 +13,9 @@ class ContactsIndex extends Component
     public function render()
     {
         return view('livewire.contacts-index', [
-           'contacts' => Contact::with('clients')
-                ->orderBy('last_name')
-                ->paginate(10)
+            'contacts' => Contact::with('clients')
+                 ->orderBy('last_name')
+                 ->paginate(10),
         ]);
     }
 }

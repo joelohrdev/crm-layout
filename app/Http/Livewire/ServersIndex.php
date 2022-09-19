@@ -16,7 +16,7 @@ class ServersIndex extends Component
             'servers' => Server::with('client')
                 ->withCount('domains')
                 ->orderBy('name', 'ASC')
-                ->paginate(10)
+                ->paginate(10),
         ]);
     }
 }

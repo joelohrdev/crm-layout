@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('domains', function (Blueprint $table) {
-            $table->renameColumn('domain', 'url');
+        Schema::table('clients', function (Blueprint $table) {
+            $table->string('consumer_key')->nullable();
+            $table->string('consumer_secret')->nullable();
         });
     }
 
@@ -25,8 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('domains', function (Blueprint $table) {
-            $table->renameColumn('url', 'domain');
+        Schema::table('clients', function (Blueprint $table) {
+            $table->dropColumn('consumer_key');
+            $table->dropColumn('consumer_secret');
         });
     }
 };

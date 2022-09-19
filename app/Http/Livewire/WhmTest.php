@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
 use Http;
 use Illuminate\Http\Client\Pool;
+use Livewire\Component;
 use Livewire\WithPagination;
 
 class WhmTest extends Component
@@ -12,6 +12,7 @@ class WhmTest extends Component
     use WithPagination;
 
     private $API_KEY_10;
+
     private $API_KEY_09;
 
     public function mount()
@@ -22,17 +23,16 @@ class WhmTest extends Component
 
     public function render()
     {
-
 //        Clear the tables
 //        Send a GET request to API
 //        Import domains into database
 
         $responses = Http::pool(fn (Pool $pool) => [
             $pool->as('server10')->withHeaders([
-                'Authorization' => 'whm root:' . $this->API_KEY_10
+                'Authorization' => 'whm root:'.$this->API_KEY_10,
             ])->get('https://server10.turnkeydigital.dev:2087/cpsess/json-api/listaccts?api.version=1&api.sort.enable=1&api.sort.a.field=domain&api.columns.b=domain&api.columns.c=ip&api.columns.d=diskused&api.columns.e=startdate&api.columns.f=suspended&api.columns.enable=1'),
             $pool->as('server09')->withHeaders([
-                'Authorization' => 'whm root:' . $this->API_KEY_09
+                'Authorization' => 'whm root:'.$this->API_KEY_09,
             ])->get('https://server9.turnkeydigital.dev:2087/cpsess/json-api/listaccts?api.version=1&api.sort.enable=1&api.sort.a.field=domain&api.columns.b=domain&api.columns.c=ip&api.columns.d=diskused&api.columns.e=startdate&api.columns.f=suspended&api.columns.enable=1'),
         ]);
 
