@@ -26,7 +26,7 @@ class ClientShow extends Component
 
     public function mount(Client $client)
     {
-        if($this->username) {
+        if($this->client->consumer_key) {
             $this->username = $client->consumer_key;
             $this->password = $client->consumer_secret;
         }
@@ -38,7 +38,7 @@ class ClientShow extends Component
 
     public function render()
     {
-        if($this->username) {
+        if($this->client->consumer_key) {
             $woomonth = Http::withBasicAuth($this->username, $this->password)->get('https://www.precision-vision.com/wp-json/wc/v3/reports/sales?period=month');
             $wooyear = Http::withBasicAuth($this->username, $this->password)->get('https://www.precision-vision.com/wp-json/wc/v3/reports/sales?period=year');
             $this->wooMonth = $woomonth->json();
