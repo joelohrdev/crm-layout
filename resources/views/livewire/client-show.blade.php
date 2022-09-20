@@ -10,38 +10,38 @@
             {{ $client->email_address }}
         </div>
     </div>
-    @if($wooMonth)
-        <div>
-            <dl class="grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow md:grid-cols-3 md:divide-y-0 md:divide-x">
-                <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-base font-normal text-gray-900">Sales this Month</dt>
-                    <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
-                        <div class="flex items-baseline text-2xl font-semibold text-tkd-blue-700">
-                            ${{ number_format($wooMonth[0]['total_sales'], 2, '.', ',') }}
-                        </div>
-                    </dd>
-                </div>
+{{--    @if($wooMonth)--}}
+{{--        <div>--}}
+{{--            <dl class="grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow md:grid-cols-3 md:divide-y-0 md:divide-x">--}}
+{{--                <div class="px-4 py-5 sm:p-6">--}}
+{{--                    <dt class="text-base font-normal text-gray-900">Sales this Month</dt>--}}
+{{--                    <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">--}}
+{{--                        <div class="flex items-baseline text-2xl font-semibold text-tkd-blue-700">--}}
+{{--                            ${{ number_format($wooMonth[0]['total_sales'], 2, '.', ',') }}--}}
+{{--                        </div>--}}
+{{--                    </dd>--}}
+{{--                </div>--}}
 
-                <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-base font-normal text-gray-900">Year to Date</dt>
-                    <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
-                        <div class="flex items-baseline text-2xl font-semibold text-tkd-blue-700">
-                            ${{ number_format($wooYear[0]['total_sales'], 2, '.', ',') }}
-                        </div>
-                    </dd>
-                </div>
+{{--                <div class="px-4 py-5 sm:p-6">--}}
+{{--                    <dt class="text-base font-normal text-gray-900">Year to Date</dt>--}}
+{{--                    <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">--}}
+{{--                        <div class="flex items-baseline text-2xl font-semibold text-tkd-blue-700">--}}
+{{--                            ${{ number_format($wooYear[0]['total_sales'], 2, '.', ',') }}--}}
+{{--                        </div>--}}
+{{--                    </dd>--}}
+{{--                </div>--}}
 
-                <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-base font-normal text-gray-900">YTD Orders Placed</dt>
-                    <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
-                        <div class="flex items-baseline text-2xl font-semibold text-tkd-blue-700">
-                            {{ $wooYear[0]['total_orders'] }}
-                        </div>
-                    </dd>
-                </div>
-            </dl>
-        </div>
-    @endif
+{{--                <div class="px-4 py-5 sm:p-6">--}}
+{{--                    <dt class="text-base font-normal text-gray-900">YTD Orders Placed</dt>--}}
+{{--                    <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">--}}
+{{--                        <div class="flex items-baseline text-2xl font-semibold text-tkd-blue-700">--}}
+{{--                            {{ $wooYear[0]['total_orders'] }}--}}
+{{--                        </div>--}}
+{{--                    </dd>--}}
+{{--                </div>--}}
+{{--            </dl>--}}
+{{--        </div>--}}
+{{--    @endif--}}
 
     <div class="grid grid-cols-1 gap-16 lg:grid-flow-col-dense lg:grid-cols-3">
        <div class="lg:col-span-1">
